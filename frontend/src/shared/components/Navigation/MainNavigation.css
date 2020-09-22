@@ -1,0 +1,21 @@
+.main-navigation {
+    height: 70px;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.main-navigation__logo {
+    color: white;
+    font-family: 'Gabriela', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.main-navigation__logo span {
+    color: var(--main-yellow);
+}
