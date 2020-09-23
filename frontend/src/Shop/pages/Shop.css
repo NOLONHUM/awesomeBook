@@ -1,0 +1,8 @@
+.shop {
+    padding: 0 40px;
+    padding-top: 200px;
+    margin: 0 auto;
+    max-width: 1700px;
+    display: flex;
+    justify-content: space-between;
+}

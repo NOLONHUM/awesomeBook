@@ -1,7 +1,7 @@
 .nav-links {
-    list-style-type: none;
     display: flex;
     justify-content: space-between;
+    list-style-type: none;
 }
 
 .nav-links a {

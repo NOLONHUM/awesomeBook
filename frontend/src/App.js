@@ -4,6 +4,7 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import './Variables.css';
 import './App.css';
+import Shop from './Shop/pages/Shop';
 
 function App() {
   
@@ -11,7 +12,7 @@ function App() {
 
   routes = (
     <Switch>
-      <Route path="/" exact>Main Page</Route>
+      <Route path="/" exact><Shop /></Route>
       <Route path="/cart" exact>Cart</Route>
       <Route path="/login" exact>Login</Route>
       <Redirect to="/" />
