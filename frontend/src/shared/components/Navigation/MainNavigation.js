@@ -1,24 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+import SideDrawer from './SideDrawer';
 import NavLinks from './NavLinks/NavLinks';
 import './MainNavigation.css';
+import Backdrop from '../UI/Backdrop/Backdrop';
+import Logo from './Logo/Logo';
 
 const MainNavigation = props => {
-    return (
-        // TO DO: Add mobile version
+    const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
-        // Desktop
-        <header className="main-navigation">
-            <button className="main-navigation__menu-btn">
-                <span />
-                <span />
-                <span />
-            </button>
-            <a href="/" className="main-navigation__logo">Awesome<span>Book</span></a>
-            <nav className="main-navigation__desktop-nav">
-                <NavLinks />
-            </nav>
-        </header> 
+    const openDrawerHandler = () => {
+        setDrawerIsOpen(true);
+      };
+    
+    const closeDrawerHandler = () => {
+        setDrawerIsOpen(false);
+    };
+    
+    return (
+        <>
+            {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
+            <SideDrawer show={drawerIsOpen}>
+                <nav className="main-navigation__drawer-nav">
+                    <Logo black centered large />
+                    <NavLinks onClick={closeDrawerHandler} />
+                </nav>
+            </SideDrawer>
+
+            <header className="main-navigation">
+                <button className="main-navigation__menu-btn" onClick={openDrawerHandler}>
+                    <span />
+                    <span />
+                    <span />
+                </button>
+                <Logo />
+                <nav className="main-navigation__desktop-nav">
+                    <NavLinks />
+                </nav>
+            </header>
+        </>
     );
 };
 

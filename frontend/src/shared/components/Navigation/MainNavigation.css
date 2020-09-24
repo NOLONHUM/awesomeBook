@@ -28,16 +28,11 @@
     background: white;
 }
 
-.main-navigation__logo {
-    color: white;
-    font-family: 'Gabriela', sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-.main-navigation__logo span {
-    color: var(--main-yellow);
+.main-navigation__drawer-nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
 }
 
 .main-navigation__desktop-nav {

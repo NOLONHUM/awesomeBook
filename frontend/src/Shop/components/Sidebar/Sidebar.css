@@ -1,5 +1,13 @@
 .sidebar {
-    width: 20%;
-    height: 500px;
-    background: lightgray;
+    width: 100%;
+    height: 200px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+@media(min-width: 1200px) {
+    .sidebar {
+        width: 20%;
+        height: 500px;
+    }
 }

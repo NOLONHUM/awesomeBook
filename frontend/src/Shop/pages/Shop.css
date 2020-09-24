@@ -4,5 +4,12 @@
     margin: 0 auto;
     max-width: 1700px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+}
+
+@media(min-width: 1200px) {
+    .shop {
+        flex-direction: row;
+    }
 }

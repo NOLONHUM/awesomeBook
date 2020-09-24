@@ -1,13 +1,21 @@
 .nav-links {
+    margin-top: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     list-style-type: none;
 }
 
+.nav-links li {
+    width: 100%;
+}
+
 .nav-links a {
-    margin-left: 25px;
-    color: white;
-    font-family: 'Gabriela', sans-serif;
+    display: block;
+    padding: 5px 0;
+    padding-left: 25px;
+    color: black;
+    font-family: "Gabriela", sans-serif;
     font-size: 26px;
     font-weight: bold;
     transition: 0.2s;
@@ -16,5 +24,26 @@
 .nav-links a:hover,
 .nav-links a:active,
 .nav-links a.active {
-    color: var(--main-yellow);
+    background: var(--main-yellow);
+}
+
+@media (min-width: 768px) {
+    .nav-links {
+        margin-top: 0;
+        flex-direction: row;
+    }
+    
+    .nav-links a {
+        display: inline;
+        margin-left: 25px;
+        padding: 0;
+        color: white;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:active,
+    .nav-links a.active {
+        background: none;
+        color: var(--main-yellow);
+    }
 }
