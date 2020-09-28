@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Catalog from '../components/Catalog/Catalog';
 import Sidebar from '../components/Sidebar/Sidebar';
 
@@ -80,6 +80,13 @@ const DummyBooks = [
 ]
 
 const Shop = props => {
+    // Add logic to filter
+    // const [genres, setGenres] = useState([
+    //     {
+
+    //     }
+    // ])
+    
     return (
         <div className="shop">
             <Sidebar />

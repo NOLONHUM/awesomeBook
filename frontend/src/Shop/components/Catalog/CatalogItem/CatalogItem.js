@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../../../shared/components/UI/Button/Button';
 
 import './CatalogItem.css';
 
@@ -17,7 +18,7 @@ const CatalogItem = props => {
             <a className="catalog-item__title" href={props.link}>{title}</a>
             <a className="catalog-item__author" href={props.link}>{props.author}</a>
             <h4>{props.price} ₽</h4>
-            <button>В КОРЗИНУ</button>
+            <Button>В КОРЗИНУ</Button>
         </div>
     );
 };

@@ -4,7 +4,7 @@
     padding-left: 50px;
     background-color: white;
     background-image: url('search-icon.png');
-    background-position: 5px 0;
+    background-position: 0;
     background-repeat: no-repeat;
     background-size: contain;
     border: 1px solid lightgray;
@@ -14,5 +14,5 @@
 }
 
 .search input:focus {
-    box-shadow: 0 1px 3px 0 lightgray;
+    box-shadow: 0 2px 5px 0 lightgray;
 }

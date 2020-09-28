@@ -1,0 +1,22 @@
+.button {
+    max-width: 300px;
+    padding: 10px 20px;
+    border: 1px solid var(--main-grey);
+    border-radius: 20px;
+    background: none;
+    color: var(--main-grey);
+    font-size: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.button__centered {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.button:hover {
+    border: 1px solid black;
+    background: black;
+    color: white;
+}
