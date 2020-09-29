@@ -80,16 +80,32 @@ const DummyBooks = [
 ]
 
 const Shop = props => {
-    // Add logic to filter
-    // const [genres, setGenres] = useState([
-    //     {
-
-    //     }
-    // ])
+    const [genres, setGenres] = useState([
+        {
+            id: 'history',
+            name: 'История',
+            picked: true
+        },
+        {
+            id: 'science',
+            name: 'Наука',
+            picked: true
+        },
+        {
+            id: 'philosophy',
+            name: 'Философия',
+            picked: true
+        },
+        {
+            id: 'economy',
+            name: 'Экономика',
+            picked: true
+        }
+    ]);
     
     return (
         <div className="shop">
-            <Sidebar />
+            <Sidebar genres={genres} />
             <Catalog books={DummyBooks} />
             {/* PAGINATION */}
         </div>

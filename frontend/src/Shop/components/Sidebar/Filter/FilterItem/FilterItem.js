@@ -4,10 +4,10 @@ import './FilterItem.css';
 
 const FilterItem = props => {
     return (
-        <div>
-            <input type="checkbox" id={props.genre} name={props.genre} />
-            <label for={props.genre}>Жанр</label>
-        </div>
+        <li className="sidebar-filter__item">
+            <input checked type="checkbox" id={props.genreId} name={props.genreId} />
+            <label for={props.genreId}>{props.children}</label>
+        </li>
     );
 };
 

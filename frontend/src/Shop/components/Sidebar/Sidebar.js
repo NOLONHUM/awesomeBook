@@ -2,15 +2,16 @@ import React from 'react';
 import Button from '../../../shared/components/UI/Button/Button';
 
 import Search from './Search/Search';
+import Filter from './Filter/Filter';
 import './Sidebar.css';
 
 const Sidebar = props => {
     return (
-        <div className="sidebar">
+        <form className="sidebar">
             <Search />
-            {/* CHECKBOXES */}
+            <Filter genres={props.genres} />
             <Button centered>ПОИСК</Button>
-        </div>
+        </form>
     );
 };
 

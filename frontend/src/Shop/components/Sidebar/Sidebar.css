@@ -1,6 +1,5 @@
 .sidebar {
     width: 100%;
-    height: 200px;
     padding: 20px 10px;
     text-align: center;
     display: flex;
@@ -10,9 +9,17 @@
     box-shadow: 0 2px 5px 0 rgba(153, 153, 153, 0.5);
 }
 
+.sidebar .button {
+    margin-top: 50px;
+}
+
 @media(min-width: 1200px) {
     .sidebar {
         width: 20%;
         height: 500px;
+    }
+
+    .sidebar .button {
+        margin-top: auto;
     }
 }

@@ -1,0 +1,25 @@
+.sidebar-filter {
+    margin-top: 10px;
+}
+
+.sidebar-filter__header {
+    font-size: 25px;
+    font-family: 'Gabriela', sans-serif;
+}
+
+.sidebar-filter__list {
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.sidebar-filter li {
+    margin-left: 10px;
+}
+
+@media (min-width: 1200px) {
+    .sidebar-filter__list {
+        flex-direction: column;
+    }
+}

@@ -37,7 +37,7 @@
     color: var(--main-grey);
 }
 
-.catalog-item button {
+.catalog-item .button {
     margin-top: 10px;
 }
 
