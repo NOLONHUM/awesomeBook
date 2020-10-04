@@ -3,9 +3,35 @@ import React from 'react';
 import FilterItem from './FilterItem/FilterItem';
 import './Filter.css';
 
+const genres = [
+    {
+        id: 'history',
+        name: 'История',
+        picked: true
+    },
+    {
+        id: 'science',
+        name: 'Наука',
+        picked: true
+    },
+    {
+        id: 'philosophy',
+        name: 'Философия',
+        picked: true
+    },
+    {
+        id: 'economy',
+        name: 'Экономика',
+        picked: true
+    }
+];
+
 const Filter = props => {
-    const genresList = props.genres.map(genre => {
-        return <FilterItem genreId={genre.id}>{genre.name}</FilterItem>
+    // TO DO: refactor filter
+    const genresList = genres.map(genre => {
+        return <FilterItem 
+                    genreId={genre.id}
+                    key={Math.random()}>{genre.name}</FilterItem>
     });
     
     return (

@@ -5,8 +5,12 @@ import './FilterItem.css';
 const FilterItem = props => {
     return (
         <li className="sidebar-filter__item">
-            <input checked type="checkbox" id={props.genreId} name={props.genreId} />
-            <label for={props.genreId}>{props.children}</label>
+            <input 
+                defaultChecked
+                type="checkbox" 
+                id={props.genreId}
+                name={props.genreId} />
+            <label htmlFor={props.genreId}>{props.children}</label>
         </li>
     );
 };

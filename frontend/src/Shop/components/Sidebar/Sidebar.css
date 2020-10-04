@@ -16,7 +16,7 @@
 @media(min-width: 1200px) {
     .sidebar {
         width: 20%;
-        height: 500px;
+        min-height: 500px;
     }
 
     .sidebar .button {

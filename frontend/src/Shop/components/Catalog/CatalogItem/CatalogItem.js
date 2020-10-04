@@ -15,8 +15,8 @@ const CatalogItem = props => {
                 <img src={props.imageUrl} alt={props.title} />
             </a>
             <h3 className="catalog-item__rating">{props.rating ? props.rating.toFixed(2) : 'Без рейтинга'}</h3>
-            <a className="catalog-item__title" href={props.link}>{title}</a>
-            <a className="catalog-item__author" href={props.link}>{props.author}</a>
+            <a className="catalog-item__title" href={'/' + props._id}>{title}</a>
+            <a className="catalog-item__author" href={'/' + props.author}>{props.author}</a>
             <h4>{props.price} ₽</h4>
             <Button>В КОРЗИНУ</Button>
         </div>

@@ -1,24 +1,29 @@
 import React from 'react';
 
 import CatalogItem from './CatalogItem/CatalogItem';
+import Loader from '../../../shared/components/UI/Loader/Loader';
 import './Catalog.css';
 
 const Catalog = props => {
     let CatalogItems;
 
     if (props.books) {
-        CatalogItems = props.books.map(book => {
+        if (props.books.length) {
+            CatalogItems = props.books.map(book => {
             return <CatalogItem 
                         title={book.title}
                         author={book.author}
                         price={book.price}
                         rating={book.rating}
                         imageUrl={book.imageUrl}
-                        link={book.link}
+                        _id={book._id}
                         key={book._id} />
-        });
+            });
+        } else {
+            CatalogItems = <h2 className="catalog-miss">К сожалению, ничего не нашлось!</h2>
+        }
     } else {
-        CatalogItems = <h2 className="catalog-miss">К сожалению, ничего не нашлось!</h2>
+        CatalogItems = <Loader />
     }
     
     return (
