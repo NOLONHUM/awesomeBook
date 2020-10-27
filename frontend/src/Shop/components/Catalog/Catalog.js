@@ -20,7 +20,7 @@ const Catalog = props => {
                         key={book._id} />
             });
         } else {
-            CatalogItems = <h2 className="catalog-miss">К сожалению, ничего не нашлось!</h2>
+            CatalogItems = <h2 className="catalog__miss">К сожалению, ничего не нашлось!</h2>
         }
     } else {
         CatalogItems = <Loader />

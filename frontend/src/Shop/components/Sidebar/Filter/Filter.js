@@ -35,9 +35,9 @@ const Filter = props => {
     });
     
     return (
-        <div className="sidebar-filter">
-            <h3 className="sidebar-filter__header">Жанры</h3>
-            <ul className="sidebar-filter__list">
+        <div className="sidebar__filter">
+            <h3 className="sidebar__header">Жанры</h3>
+            <ul className="sidebar__list">
                 {genresList}
             </ul>
         </div>

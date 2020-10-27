@@ -4,7 +4,7 @@ import './Search.css';
 
 const Search = props => {
     return (
-        <div className="sidebar-search">
+        <div className="sidebar__search">
             <input 
                 type="text" 
                 placeholder="Поиск" ></input>

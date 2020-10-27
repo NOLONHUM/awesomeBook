@@ -5,7 +5,7 @@ import './NavLinks.css';
 
 const NavLinks = props => {
     return (
-        <ul className="nav-links" onClick={props.onClick}>
+        <ul className="main-navigation__links" onClick={props.onClick}>
             <li>
                 <NavLink to="/cart">
                     Корзина

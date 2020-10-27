@@ -4,7 +4,7 @@ import './Button.css';
 
 const Button = props => {
     const classes = `button
-     ${props.centered ? ' button__centered' : ''}`
+     ${props.centered ? ' button_centered' : ''}`
     
     return (
         <button className={classes}>

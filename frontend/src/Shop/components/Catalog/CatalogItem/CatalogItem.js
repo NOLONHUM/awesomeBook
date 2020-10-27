@@ -10,13 +10,13 @@ const CatalogItem = props => {
     }
     
     return (
-        <div className="catalog-item">
+        <div className="catalog__item">
             <a href={props.link}>
                 <img src={props.imageUrl} alt={props.title} />
             </a>
-            <h3 className="catalog-item__rating">{props.rating ? props.rating.toFixed(2) : 'Без рейтинга'}</h3>
-            <a className="catalog-item__title" href={'/' + props._id}>{title}</a>
-            <a className="catalog-item__author" href={'/' + props.author}>{props.author}</a>
+            <h3 className="catalog__rating">{props.rating ? props.rating.toFixed(2) : 'Без рейтинга'}</h3>
+            <a className="catalog__title" href={'/' + props._id}>{title}</a>
+            <a className="catalog__author" href={'/' + props.author}>{props.author}</a>
             <h4>{props.price} ₽</h4>
             <Button>В КОРЗИНУ</Button>
         </div>

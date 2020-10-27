@@ -10,10 +10,10 @@
     color: var(--main-yellow);
 }
 
-.main-navigation__logo-black {
+.main-navigation__logo_black {
     color: black;
 }
 
-.main-navigation__logo-centered {
+.main-navigation__logo_centered {
     margin: 0 auto;
 }

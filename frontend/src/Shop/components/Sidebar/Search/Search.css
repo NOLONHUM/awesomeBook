@@ -1,4 +1,4 @@
-.sidebar-search input {
+.sidebar__search input {
     width: 100%;
     padding: 10px;
     padding-left: 50px;
@@ -13,6 +13,6 @@
     transition: 0.3s;
 }
 
-.sidebar-search input:focus {
+.sidebar__search input:focus {
     box-shadow: 0 2px 5px 0 lightgray;
 }
