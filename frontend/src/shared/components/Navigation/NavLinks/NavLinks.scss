@@ -1,0 +1,50 @@
+@import '../../../../Variables.scss';
+
+.main-navigation__links {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    li {
+        width: 100%;
+    }
+
+    a {
+        display: block;
+        padding: 5px 0;
+        padding-left: 25px;
+        color: black;
+        font-family: "Gabriela", sans-serif;
+        font-size: 26px;
+        font-weight: bold;
+        transition: 0.2s;
+
+        &:hover,
+        &:active,
+        &.active {
+            background: $main-yellow;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .main-navigation__links {
+        margin-top: 0;
+        flex-direction: row;
+
+        a {
+            display: inline;
+            margin-left: 25px;
+            padding: 0;
+            color: white;
+
+            &:hover,
+            &:active,
+            &.active {
+                background: none;
+                color: $main-yellow;
+            }
+        }
+    }
+}

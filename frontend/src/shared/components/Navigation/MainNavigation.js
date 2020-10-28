@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import SideDrawer from './SideDrawer';
 import NavLinks from './NavLinks/NavLinks';
-import './MainNavigation.css';
 import Backdrop from '../UI/Backdrop/Backdrop';
 import Logo from './Logo/Logo';
+import './MainNavigation.scss';
 
 const MainNavigation = props => {
     const [drawerIsOpen, setDrawerIsOpen] = useState(false);

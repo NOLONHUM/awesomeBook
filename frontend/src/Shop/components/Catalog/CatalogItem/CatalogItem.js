@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../../../shared/components/UI/Button/Button';
 
-import './CatalogItem.css';
+import './CatalogItem.scss';
 
 const CatalogItem = props => {
     let title = props.title;

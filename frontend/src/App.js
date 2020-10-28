@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 import MainNavigation from './shared/components/Navigation/MainNavigation';
-import './Variables.css';
-import './App.css';
+import './App.scss';
 import Shop from './Shop/pages/Shop';
 
 function App() {

@@ -1,0 +1,21 @@
+@import '../../../../Variables.scss';
+
+.main-navigation__logo {
+    color: white;
+    font-family: 'Gabriela', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.2s;
+
+    span {
+        color: $main-yellow;
+    }
+
+    &_black {
+        color: black;
+    }
+
+    &_centered {
+        margin: 0 auto;
+    }
+}

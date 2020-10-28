@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Catalog from '../components/Catalog/Catalog';
 import Sidebar from '../components/Sidebar/Sidebar';
 
-import './Shop.css';
+import './Shop.scss';
 
 const Shop = props => {
     const [books, setBooks] = useState(null);

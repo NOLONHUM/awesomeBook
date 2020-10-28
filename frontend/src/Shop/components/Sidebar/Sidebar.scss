@@ -7,19 +7,19 @@
     border: 1px solid lightgray;
     border-radius: 5px;
     box-shadow: 0 2px 5px 0 rgba(153, 153, 153, 0.5);
-}
 
-.sidebar .button {
-    margin-top: 50px;
+    .button {
+        margin-top: 50px;
+    }
 }
 
 @media(min-width: 1200px) {
     .sidebar {
         width: 20%;
         min-height: 500px;
-    }
 
-    .sidebar .button {
-        margin-top: auto;
+        .button {
+            margin-top: auto;
+        }
     }
 }

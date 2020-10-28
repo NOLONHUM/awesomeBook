@@ -3,7 +3,7 @@ import Button from '../../../shared/components/UI/Button/Button';
 
 import Search from './Search/Search';
 import Filter from './Filter/Filter';
-import './Sidebar.css';
+import './Sidebar.scss';
 
 const Sidebar = props => {
     return (

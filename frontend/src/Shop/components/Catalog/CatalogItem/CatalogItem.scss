@@ -1,0 +1,64 @@
+@import '../../../../Variables.scss';
+
+.catalog__item {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgray;
+
+    img {
+        width: 150px;
+        height: 200px;
+        box-shadow: 0 2px 5px $main-grey;
+    }
+
+    .catalog__rating {
+        color: #ffc400;
+        font-family: 'Gabriela', sans-serif;
+    }
+
+    .catalog__title {
+        display: block;
+        height: 50px;
+        margin-top: 10px;
+        color: black;
+        font-family: 'Gabriela', sans-serif;
+        font-size: 19px;
+
+        &:hover {
+            text-decoration: underline $main-grey;
+        }
+    }
+
+    .catalog__author {
+        margin-top: 30px;
+        color: $main-grey;
+
+        &:hover {
+            text-decoration: underline $main-grey;
+        }
+    }
+
+    .button {
+        margin-top: 10px;
+    }
+
+    h4 {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+}
+
+@media(min-width: 768px) {
+    .catalog__item {
+        width: 50%;
+    }
+}
+
+@media(min-width: 1200px) {
+    .catalog__item {
+        width: 25%;
+    }
+}

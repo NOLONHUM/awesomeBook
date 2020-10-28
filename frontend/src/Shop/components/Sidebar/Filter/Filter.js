@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FilterItem from './FilterItem/FilterItem';
-import './Filter.css';
+import './Filter.scss';
 
 const genres = [
     {

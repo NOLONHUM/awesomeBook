@@ -2,7 +2,7 @@ import React from 'react';
 
 import CatalogItem from './CatalogItem/CatalogItem';
 import Loader from '../../../shared/components/UI/Loader/Loader';
-import './Catalog.css';
+import './Catalog.scss';
 
 const Catalog = props => {
     let CatalogItems;
