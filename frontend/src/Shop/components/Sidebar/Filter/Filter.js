@@ -23,6 +23,11 @@ const genres = [
         id: 'economy',
         name: 'Экономика',
         picked: true
+    },
+    {
+        id: 'fiction',
+        name: 'Художественное',
+        picked: true
     }
 ];
 
@@ -31,7 +36,7 @@ const Filter = props => {
     const genresList = genres.map(genre => {
         return <FilterItem 
                     genreId={genre.id}
-                    key={Math.random()}>{genre.name}</FilterItem>
+                    key={genre.id}>{genre.name}</FilterItem>
     });
     
     return (

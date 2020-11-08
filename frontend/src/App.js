@@ -6,7 +6,6 @@ import './App.scss';
 import Shop from './Shop/pages/Shop';
 
 function App() {
-  
   let routes;
 
   routes = (
