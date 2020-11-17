@@ -1,74 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+
+import * as actions from '../store/actions/index';
+
 import Catalog from '../components/Catalog/Catalog';
 import Sidebar from '../components/Sidebar/Sidebar';
 
 import './Shop.scss';
 
 const Shop = props => {
-    const [books, setBooks] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-    const [genres, setGenres] = useState([
-        {
-            id: 'history',
-            name: 'История',
-            picked: true
-        },
-        {
-            id: 'science',
-            name: 'Наука',
-            picked: true
-        },
-        {
-            id: 'philosophy',
-            name: 'Философия',
-            picked: true
-        },
-        {
-            id: 'economy',
-            name: 'Экономика',
-            picked: true
-        },
-        {
-            id: 'fiction',
-            name: 'Художественное',
-            picked: true
-        }
-    ]);
-
+    const [fetchBooks, genresList] = [props.fetchBooks, props.genresList];
+    
     useEffect(() => {
-        const fetchBooks = async () => {
-            setIsLoading(true);
-            try {
-                const responseData = await fetch('http://localhost:5000/api/shop?fiction');
-                const parsedData = await responseData.json();
-
-                setBooks(parsedData);
-            } catch (e) {}
-            setIsLoading(false);
-        };
-        fetchBooks();
-    }, []);
-
-    const changeGenreStatus = (event) => {
-        const genreIndex = genres.findIndex(genre => {
-            return genre.id === event.id;
-        });
-        
-        const newGenres = [
-            ...genres,
-        ];
-        newGenres[genreIndex].picked = !newGenres[genreIndex].picked;
-
-        setGenres(newGenres);
-    }
+        fetchBooks(genresList);
+    }, [fetchBooks, genresList]);
 
     return (
         <div className="shop">
-            <Sidebar genres={genres}/>
-            <Catalog books={books} isLoading={isLoading} />
+            <Sidebar/>
+            <Catalog books={props.books} isLoading={props.isLoading} />
             {/* PAGINATION */}
         </div>
     );
 };
 
-export default Shop;
+const mapStateToProps = state => {
+    return {
+        isLoading: state.catalog.isLoading,
+        books: state.catalog.books,
+        genresList: state.genres
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchBooks: (genresList) => dispatch(actions.fetchBooks(genresList))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Shop);

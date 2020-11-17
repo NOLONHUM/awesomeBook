@@ -7,7 +7,9 @@ import './Catalog.scss';
 const Catalog = props => {
     let CatalogItems;
 
-    if (props.books) {
+    if (props.isLoading) {
+        CatalogItems = <Loader />
+    } else if (props.books) {
         if (props.books.length) {
             CatalogItems = props.books.map(book => {
             return <CatalogItem 
@@ -23,7 +25,7 @@ const Catalog = props => {
             CatalogItems = <h2 className="catalog__miss">К сожалению, ничего не нашлось!</h2>
         }
     } else {
-        CatalogItems = <Loader />
+        CatalogItems = <h2 className="catalog__miss">Что-то пошло не так!</h2>
     }
     
     return (

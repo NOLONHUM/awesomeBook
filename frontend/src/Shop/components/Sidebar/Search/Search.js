@@ -7,7 +7,7 @@ const Search = props => {
         <div className="sidebar__search">
             <input 
                 type="text" 
-                placeholder="Поиск" ></input>
+                placeholder="Поиск"></input>
         </div>
     );
 };

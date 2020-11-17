@@ -1,42 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import FilterItem from './FilterItem/FilterItem';
 import './Filter.scss';
 
-const genres = [
-    {
-        id: 'history',
-        name: 'История',
-        picked: true
-    },
-    {
-        id: 'science',
-        name: 'Наука',
-        picked: true
-    },
-    {
-        id: 'philosophy',
-        name: 'Философия',
-        picked: true
-    },
-    {
-        id: 'economy',
-        name: 'Экономика',
-        picked: true
-    },
-    {
-        id: 'fiction',
-        name: 'Художественное',
-        picked: true
-    }
-];
-
 const Filter = props => {
-    // TO DO: refactor filter
-    const genresList = genres.map(genre => {
+    const genresList = props.genresList.map(genre => {
         return <FilterItem 
                     genreId={genre.id}
-                    key={genre.id}>{genre.name}</FilterItem>
+                    key={genre.id}
+                    checked={genre.checked}>{genre.name}</FilterItem>
     });
     
     return (
@@ -49,4 +22,10 @@ const Filter = props => {
     );
 };
 
-export default Filter;
+const mapStateToProps = state => {
+    return {
+        genresList: state.genres
+    };
+};
+
+export default connect(mapStateToProps)(Filter);
