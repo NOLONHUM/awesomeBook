@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import * as actions from '../store/actions/index';
@@ -8,20 +8,20 @@ import Sidebar from '../components/Sidebar/Sidebar';
 
 import './Shop.scss';
 
-const Shop = props => {
-    const [fetchBooks, genresList] = [props.fetchBooks, props.genresList];
-    
-    useEffect(() => {
-        fetchBooks(genresList);
-    }, [fetchBooks, genresList]);
+class Shop extends Component {
+    componentDidMount() {
+        this.props.fetchBooks(this.props.genresList)
+    }
 
-    return (
-        <div className="shop">
-            <Sidebar/>
-            <Catalog books={props.books} isLoading={props.isLoading} />
-            {/* PAGINATION */}
-        </div>
-    );
+    render() {
+        return (
+            <div className="shop">
+                <Sidebar/>
+                <Catalog books={this.props.books} isLoading={this.props.isLoading} />
+                {/* PAGINATION */}
+            </div>
+        );
+    }
 };
 
 const mapStateToProps = state => {

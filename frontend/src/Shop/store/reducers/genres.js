@@ -34,7 +34,7 @@ const toggleGenreStatus = (state, action) => {
     });
     
     const newState = [
-        ...state,
+        ...state
     ];
     newState[genreIndex].checked = !newState[genreIndex].checked;
 

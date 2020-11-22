@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import FilterItem from './FilterItem/FilterItem';
 import './Filter.scss';
@@ -22,10 +21,4 @@ const Filter = props => {
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        genresList: state.genres
-    };
-};
-
-export default connect(mapStateToProps)(Filter);
+export default Filter;
