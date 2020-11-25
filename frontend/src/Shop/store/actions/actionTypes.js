@@ -6,3 +6,4 @@ export const FETCH_BOOKS = 'FETCH_BOOKS';
 export const FETCHING_START = 'FETCHING_START';
 export const FETCHING_SUCCESS = 'FETCHING_SUCCESS';
 export const FETCHING_ERROR = 'FETCHING_ERROR';
+export const CLEAR_ERROR = 'CLEAR_ERROR';

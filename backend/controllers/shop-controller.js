@@ -1,7 +1,7 @@
-
 const mongoose = require('mongoose');
 
 const Book = require('../models/book');
+const HttpError = require('../models/http-error');
 
 const getBooks = async (req, res, next) => {
     let books;
@@ -28,7 +28,9 @@ const getBooks = async (req, res, next) => {
             .sort({rating: -1});
         };
     } catch (err) {
-        return res.status(400);
+        return next(
+            new HttpError('Что-то пошло не так во время загрузки товаров')
+        );
     };
     
     res.json(books);

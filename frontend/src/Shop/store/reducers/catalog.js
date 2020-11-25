@@ -4,7 +4,7 @@ import { updateObject } from '../../../shared/util/updateObject';
 const initialState = {
     isLoading: true,
     error: null,
-    books: []
+    books: null
 };
 
 const fetchingStart = (state) => {
@@ -24,7 +24,13 @@ const fetchingSuccess = (state, action) => {
 const fetchingError = (state, action) => {
     return updateObject(state, {
         isLoading: false,
-        error: action.error
+        error: action.error.message
+    });
+};
+
+const clearError = (state) => {
+    return updateObject(state, {
+        error: null
     });
 };
 
@@ -36,6 +42,8 @@ const reducer = (state = initialState, action) => {
             return fetchingSuccess(state, action);
         case actionTypes.FETCHING_ERROR:
             return fetchingError(state, action);
+        case actionTypes.CLEAR_ERROR:
+            return clearError(state);
         default:
             return state;
     };

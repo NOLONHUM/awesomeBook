@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import Notiflix from "notiflix";
 
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import './App.scss';
@@ -7,6 +8,12 @@ import Shop from './Shop/pages/Shop';
 
 function App() {
   let routes;
+
+  useEffect(() => {
+    Notiflix.Notify.Init({
+      position:"right-bottom"
+    }); 
+  }, []);
 
   routes = (
     <Switch>

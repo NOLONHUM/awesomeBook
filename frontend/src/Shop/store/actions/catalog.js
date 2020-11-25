@@ -23,7 +23,6 @@ export const fetchingError = (error) => {
 export const fetchBooks = (genresList, title) => {
     return async dispatch => {
         dispatch(fetchingStart());
-        // TO DO: Implement decent error handling
         try {
             const pickedGenres = genresList.filter(genre => {
                 return genre.checked;
@@ -32,8 +31,11 @@ export const fetchBooks = (genresList, title) => {
             });
             let query = pickedGenres.join('&');
             if (title) query += `&title=${title}`;
-            const responseData = await fetch('http://localhost:5000/api/shop?' + query);
-            const parsedData = await responseData.json();
+            const response = await fetch('http://localhost:5000/api/shop?' + query);
+            const parsedData = await response.json();
+            if (!response.ok) {
+                throw new Error(parsedData.message)
+            };
             dispatch(fetchingSuccess(parsedData));
         } catch(err) {
             dispatch(fetchingError(err));
@@ -41,3 +43,8 @@ export const fetchBooks = (genresList, title) => {
     };
 };
 
+export const clearError = () => {
+    return {
+        type: actionTypes.CLEAR_ERROR
+    };
+};
