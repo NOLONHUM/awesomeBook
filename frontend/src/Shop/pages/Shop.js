@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import Notiflix from "notiflix";
 
 import * as actions from '../store/actions/index';
@@ -8,10 +10,12 @@ import Catalog from '../components/Catalog/Catalog';
 import Sidebar from '../components/Sidebar/Sidebar';
 
 import './Shop.scss';
+import Pagination from '../components/Pagination/Pagination';
 
 class Shop extends Component {
     componentDidMount() {
-        this.props.fetchBooks(this.props.genresList);
+        let page = this.props.match.params.page || 1;
+        this.props.fetchBooks(this.props.genresList, page);
     };
 
     componentDidUpdate() {
@@ -19,14 +23,18 @@ class Shop extends Component {
           Notiflix.Notify.Failure(this.props.catalogError);
           this.props.clearError();
         };
+        let page = this.props.match.params.page || 1;
+        this.props.fetchBooks(this.props.genresList, page);
     };
 
     render() {
         return (
             <div className="shop">
                 <Sidebar/>
-                <Catalog books={this.props.books} isLoading={this.props.isLoading} />
-                {/* PAGINATION */}
+                <div className="shop__catalog-section">
+                    <Catalog />
+                    <Pagination />
+                </div>
             </div>
         );
     }
@@ -34,8 +42,6 @@ class Shop extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoading: state.catalog.isLoading,
-        books: state.catalog.books,
         genresList: state.genres,
         catalogError: state.catalog.error
     };
@@ -43,9 +49,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchBooks: (genresList) => dispatch(actions.fetchBooks(genresList)),
+        fetchBooks: (genresList, page) => dispatch(actions.fetchBooks(genresList, page)),
         clearError: () => dispatch(actions.clearError())
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Shop);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Shop));

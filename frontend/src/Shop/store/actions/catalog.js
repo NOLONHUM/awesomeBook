@@ -6,10 +6,11 @@ export const fetchingStart = () => {
     };
 };
 
-export const fetchingSuccess = (books) => {
+export const fetchingSuccess = (data) => {
     return {
         type: actionTypes.FETCHING_SUCCESS,
-        books: books
+        books: data.books,
+        totalItems: data.totalItems
     };
 };
 
@@ -20,7 +21,7 @@ export const fetchingError = (error) => {
     };
 };
 
-export const fetchBooks = (genresList, title) => {
+export const fetchBooks = (genresList, page, title) => {
     return async dispatch => {
         dispatch(fetchingStart());
         try {
@@ -31,6 +32,7 @@ export const fetchBooks = (genresList, title) => {
             });
             let query = pickedGenres.join('&');
             if (title) query += `&title=${title}`;
+            if (page) query += `&page=${page}`
             const response = await fetch('http://localhost:5000/api/shop?' + query);
             const parsedData = await response.json();
             if (!response.ok) {

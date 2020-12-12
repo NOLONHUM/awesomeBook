@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import Notiflix from "notiflix";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Notiflix from 'notiflix';
 
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import './App.scss';
 import Shop from './Shop/pages/Shop';
+import AddItem from './Admin/pages/addItem';
 
 function App() {
   let routes;
@@ -17,12 +18,13 @@ function App() {
 
   routes = (
     <Switch>
-      <Route path="/" exact><Shop /></Route>
       <Route path="/cart" exact>Cart</Route>
       <Route path="/login" exact>Login</Route>
-      <Redirect to="/" />
+      <Route path="/additem" exact><AddItem /></Route>
+      <Route path="/:page" exact><Shop /></Route>
+      <Route path="/" exact><Shop /></Route>
     </Switch>
-  )
+  );
   
   return (
     <BrowserRouter>

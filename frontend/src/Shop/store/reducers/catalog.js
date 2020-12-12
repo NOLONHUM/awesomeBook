@@ -4,7 +4,8 @@ import { updateObject } from '../../../shared/util/updateObject';
 const initialState = {
     isLoading: true,
     error: null,
-    books: null
+    books: null,
+    totalItems: null
 };
 
 const fetchingStart = (state) => {
@@ -17,6 +18,7 @@ const fetchingSuccess = (state, action) => {
     return updateObject(state, {
         isLoading: false,
         books: action.books,
+        totalItems: action.totalItems,
         error: null
     });
 };

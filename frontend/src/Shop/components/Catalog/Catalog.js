@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import CatalogItem from './CatalogItem/CatalogItem';
 import Loader from '../../../shared/components/UI/Loader/Loader';
@@ -35,4 +36,11 @@ const Catalog = props => {
     );
 };
 
-export default Catalog;
+const mapStateToProps = state => {
+    return {
+        isLoading: state.catalog.isLoading,
+        books: state.catalog.books
+    };
+};
+
+export default connect(mapStateToProps)(Catalog);

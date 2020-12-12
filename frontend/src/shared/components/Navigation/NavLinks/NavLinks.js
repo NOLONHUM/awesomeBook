@@ -7,6 +7,11 @@ const NavLinks = props => {
     return (
         <ul className="main-navigation__links" onClick={props.onClick}>
             <li>
+                <NavLink to="/additem">
+                    Добавить
+                </NavLink>
+            </li>
+            <li>
                 <NavLink to="/cart">
                     Корзина
                 </NavLink>

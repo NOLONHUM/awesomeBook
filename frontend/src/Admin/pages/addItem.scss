@@ -1,0 +1,13 @@
+.add-item {
+    padding: 0 40px;
+    padding-top: 200px;
+    padding-bottom: 50px;
+    margin: auto;
+    max-width: 1700px;
+}
+
+@media(min-width: 1200px) {
+    .add-item {
+        flex-direction: row;
+    }
+}

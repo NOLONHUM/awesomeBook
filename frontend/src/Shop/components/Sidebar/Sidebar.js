@@ -13,7 +13,7 @@ const Sidebar = props => {
     
     const submitFormHandler = (event) => {
         event.preventDefault();
-        props.fetchBooks(props.genresList, searchBar);
+        props.fetchBooks(props.genresList, 1, searchBar);
     };
 
     const changeSearchBarHandler = (event) => {
@@ -41,7 +41,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchBooks: (genresList, title) => dispatch(actions.fetchBooks(genresList, title))
+        fetchBooks: (genresList, page, title) => dispatch(actions.fetchBooks(genresList, page, title))
     };
 };
 
