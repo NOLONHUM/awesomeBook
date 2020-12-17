@@ -21,4 +21,14 @@
         background: black;
         color: white;
     }
+
+    &:disabled {
+        opacity: 0.5;
+        &:hover {
+            border: 1px solid $main-grey;
+            background: none;
+            color: $main-grey;
+            cursor: default;
+        }
+    }
 }

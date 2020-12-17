@@ -1,0 +1,33 @@
+@import '../../../../Variables.scss';
+
+.input {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin: auto;
+        font-size: 18px;
+    }
+
+    input {
+        width: 300px;
+        height: 35px;
+        padding: 10px;
+        border: 1px solid $main-grey;
+        border-radius: 10px;
+        font-size: 16px;
+        transition: 0.3s;
+
+        &:focus {
+            box-shadow: 0 2px 5px 0 lightgray;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .input {
+        input {
+            width: 400px;
+        }
+    }
+}

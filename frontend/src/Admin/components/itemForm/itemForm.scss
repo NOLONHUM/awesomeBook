@@ -1,0 +1,19 @@
+.add-item__form {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    input {
+        margin: 10px 0;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+}

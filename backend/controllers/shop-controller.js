@@ -5,7 +5,7 @@ const HttpError = require('../models/http-error');
 
 const getBooks = async (req, res, next) => {
     const perPage = 8;
-    let page = req.query.page || 1;
+    const page = req.query.page || 1;
     let books;
 
     try {
@@ -42,4 +42,33 @@ const getBooks = async (req, res, next) => {
     // await createdBook.save();
 }
 
+const addItem = async (req, res, next) => {
+    try {
+        const inputsData = req.body.inputs;
+        const genresData = req.body.genres;
+        const genres = genresData.filter(genre => {
+            return genre.checked;
+        }).map(genre => {
+            return genre.id;
+        });
+        
+        const createdBook = new Book({
+            title: inputsData[0].value,
+            author: inputsData[1].value,
+            price: inputsData[2].value,
+            rating: inputsData[3].value,
+            imageUrl: inputsData[4].value,
+            genres: genres
+        });
+        await createdBook.save();
+    } catch(err) {
+        return next(
+            new HttpError(err || 'Что-то пошло не так во время добавления товара')
+        );
+    }
+
+    return res.send();
+};
+
 exports.getBooks = getBooks;
+exports.addItem = addItem;
